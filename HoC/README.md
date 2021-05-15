@@ -3,13 +3,13 @@
 A higher-order component (HoC) is an pattern in React for reusing component logic.
 A HoC is a function that accepts a component and returns a new component.
 
-- HoC Don’t modify or mutate the component. We create new ones.
+- HoC does not modify or mutate the component. It create new ones.
 - HoC is a pure function. That means it has no side effects. It only returns a new component.
 
-## Context
+## 📘 Context
 
-Ley's use in first time class component. We will see hooks after
-We create a component which handle a counter when user click on button
+We will use class component. We will see hooks after.
+We create a component which handle a counter when user click on button.
 
 ```js
 export class ClickCounter extends React.Component {
@@ -32,7 +32,7 @@ export class ClickCounter extends React.Component {
 ```
 
 Now we have to create an other component which handle a counter when user hover a text.
-Easy we copy paste precedent component and adapt it to the new demands
+Easy ! We copy paste precedent component and adapt it to the new demands.
 
 ```js
 export class HoverCounter extends React.Component {
@@ -52,7 +52,7 @@ export class HoverCounter extends React.Component {
 }
 ```
 
-We display our component
+We display our component.
 
 ```js
 export class App extends React.Component {
@@ -67,14 +67,14 @@ export class App extends React.Component {
 }
 ```
 
-## Problem
+## 📌 Problem
 
 Our code is definitely not DRY. Ther counter logic can be extracted and reused.
 To do that we will use a HoC.
 
-## Solution
+## 🔑 Solution
 
-Let's create our HoC. The convention say to prefix it by `With`
+Let's create our HoC. The convention say to prefix it by `With`.
 
 ```js
 export const WithCounter = (WrappedComponent) => {
@@ -104,7 +104,7 @@ export const WithCounter = (WrappedComponent) => {
 ```
 
 Concretlly the component `WithCounter` take a wrapped component and return a new component with the counter logic.
-Now let's change our `ClickCounter` and `HoverCounter` components
+Now let's change our `ClickCounter` and `HoverCounter` components.
 
 ```js
 class ClickCounter extends React.Component {
@@ -124,14 +124,14 @@ class HoverCoutner extends React.Component {
 export default WithCounter(HoverCoutner);
 ```
 
-## HoC VS Hooks
+## 📗 HoC VS Hooks
 
-With hooks, prefer to use custom hooks
+Very often prefer to use custom hooks.
 
-- Does not nedd to require restructuring your components as you use them
-- Making code easier to understand and easier to maintain
+- Does not nedd to require restructuring your components as you use them.
+- Making code easier to understand and easier to maintain.
 
-We create our custom hook
+We create our custom hook.
 
 ```js
 const useCounter = (initalValue) => {
@@ -145,7 +145,7 @@ const useCounter = (initalValue) => {
 };
 ```
 
-An call it in `ClickCounter` and `HoverCounter` components
+An call it in `ClickCounter` and `HoverCounter` components.
 
 ```js
 const ClickCounter = () => {

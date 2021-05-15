@@ -2,9 +2,9 @@
 
 This pattern focuses on passing down the state of the parent component to its children.
 
-## Context
+## 📘 Context
 
-I want to pass parent state to childrens like this.
+I want to pass down the parent state to its children like this.
 
 ```js
 <Form isDisabled={isDisabled}>
@@ -18,20 +18,20 @@ I want to pass parent state to childrens like this.
 </Form>
 ```
 
-## Problem
+## 📌 Problem
 
-This code below works, but forces to pass our `isDisabled` props through each children. Even those who don't need it.
+This code above works, but forces us to pass our `isDisabled` prop through each children. Even those who don't need it.
 
-## Solution
+## 🔑 Solution
 
-Two solution offer to us :
+Two solutions are possible:
 
 - React.cloneElement
 - Using context API
 
 ### React.cloneElement
 
-We are going to extends childrens component props with `isDisabled`
+We are going to extends children components props with `isDisabled`
 
 ```js
 export const Form = (props) => {
@@ -47,7 +47,7 @@ export const Form = (props) => {
 };
 ```
 
-Our children components will receivethe props `isDisabled`
+Our children components will receivethe prop `isDisabled`
 
 ```js
 export const Input = (props) => {
@@ -59,7 +59,7 @@ export const Button = (props) => {
 };
 ```
 
-Beware : This methods works only for direct children
+⚠️ **Beware** : This methods works only for direct children
 
 ```js
 <Form disabled={disabled}>
@@ -75,7 +75,7 @@ Beware : This methods works only for direct children
 </Form>
 ```
 
-Prefer the Context API
+💡 Prefer the Context API method.
 
 ### Context API
 
@@ -94,7 +94,7 @@ const Form = (props) => {
 };
 ```
 
-Our children components will receivethe props `isDisabled` through hook useContext now.
+Our children components will receivethe prop `isDisabled` through the hook `useContext` now.
 
 ```js
 const Button = () => {

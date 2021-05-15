@@ -1,11 +1,11 @@
-# Render props
+# Render Props
 
-## Layout exemple
+## Layout Example
 
-#### Context
+#### 📘 Context
 
-We have a `Layout` component which handle logic to set visible children component or not.
-Children component can be different component
+We have a `Layout` component which handle logic to display children component or not.
+Children component can be different components.
 
 ```js
 const Layout = () => {
@@ -22,11 +22,11 @@ const Layout = () => {
 };
 ```
 
-#### Problem
+#### 📌 Problem
 
 We want to avoid bad solution like this:
 
-**BAD solution**
+❌ **Bad solution**
 
 ```js
 const Layout = ({ type }) => {
@@ -44,12 +44,10 @@ const Layout = ({ type }) => {
 };
 ```
 
-We don't want that `Layout` handle the logic to display or not children
-This is also broke the SOLID "Open-close principle"
+We don't want that `Layout` handle the logic to display or not children.
+This also break the "Open-close principle".
 
-#### Solution
-
-Pass children component as children
+#### 🔑 Solution
 
 ```js
 <Layout>
@@ -63,7 +61,7 @@ Pass children component as children
 </Layout>;
 ```
 
-Let's change `Layout` component
+Let's change the `Layout` component.
 
 ```js
 const Layout = ({ children }) => {
@@ -80,7 +78,7 @@ const Layout = ({ children }) => {
 };
 ```
 
-With for exemple a children `Page1` and `Page2`
+Here's our children components `Page1` and `Page2`.
 
 ```js
 const Page1 = () => (
@@ -97,7 +95,7 @@ const Page2 = () => (
 ```
 
 This is a good start. However `Layout` component still handle display logic of children.
-Let's change that
+Let's change that.
 
 ```js
 const Layout = ({ children }) => {
@@ -121,14 +119,14 @@ const Page2 = ({ isOpen }) => (
 );
 ```
 
-## Form component exemple
+## Form Component Example
 
-#### Context
+#### 📘 Context
 
-We have a `ContactForm` component which handle
+We have a `ContactForm` component which handle.
 
-- Display fields
-- Handle values entered by user
+- Displaying fields
+- Handling values entered by user
 
 ```js
 class ContactForm extends React.Component {
@@ -164,14 +162,14 @@ class ContactForm extends React.Component {
 
 We decided to create an other component `BooksForm` with other fields to display but which still handle the values entered by user.
 
-#### Problem
+#### 📌 Problem
 
 Our code will not be DRY if we duplicate the `ContactForm` component and only change the fields to display.
 
-#### Solution
+#### 🔑 Solution
 
 Let's create a `FormManager` component which only handle the values entered by user.
-`ContactForm` and `BooksForm` will only display different fields.
+`ContactForm` and `BooksForm` will only display form fields.
 
 ```js
 const FormManager = ({ initialValues, children }) => {
@@ -193,7 +191,7 @@ const FormManager = ({ initialValues, children }) => {
 };
 ```
 
-Here the code of `ContactForm`
+Here's the code of `ContactForm`.
 
 ```js
 function ContactForm() {

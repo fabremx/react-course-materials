@@ -1,4 +1,4 @@
-# Compound component pattern
+# Compound Component Pattern
 
 This pattern focuses on passing down the state of the parent component to its children.
 

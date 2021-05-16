@@ -10,6 +10,9 @@ React examples, patterns, explication for React formation.
 
 ## Hooks
 
+- [Why Facebook created Hooks](https://github.com/fabremx/react-course-materials/tree/master/hooks/whyHooks)
+- [Should I use Class or Hooks ?](https://github.com/fabremx/react-course-materials/tree/master/hooks/classOrHooks)
+- [useEffect](https://github.com/fabremx/react-course-materials/tree/master/hooks/useEffect)
 - [useCallback](https://github.com/fabremx/react-course-materials/tree/master/hooks/useCallback)
 
 ## Patterns
@@ -21,3 +24,9 @@ React examples, patterns, explication for React formation.
 ## Refs
 
 - [Refs & Refs Forwarding](https://github.com/fabremx/react-course-materials/tree/master/refs)
+
+## React DOM
+
+- [DOM](https://github.com/fabremx/react-course-materials/tree/master/reactDOM/DOM)
+- [Virtual DOM](https://github.com/fabremx/react-course-materials/tree/master/reactDOM/virtualDOM)
+- [Fiber](https://github.com/fabremx/react-course-materials/tree/master/reactDOM/fiber)
